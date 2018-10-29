@@ -16,9 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from .views import hello, articles
+from .views import fname
+from .views import fname2
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello/', hello),
+    path('hello/<str:nome>/', fname),
+    path('pessoa/<str:nome>/', fname2),
     path('articles/<int:year>/', articles),
 ]
